@@ -10,13 +10,13 @@ import (
 // Flags
 var (
 	passwordLength   int
-	withSpecialChars int
+	withSpecialChars bool
 	r                *rand.Rand
 )
 
 func main() {
 	flag.Parse()
-	password := generatePassword(passwordLength, int2Bool(withSpecialChars))
+	password := generatePassword(passwordLength, withSpecialChars)
 	fmt.Printf("Generated password: %s\n", password)
 }
 
@@ -24,7 +24,7 @@ func init() {
 	r = rand.New(rand.NewSource(time.Now().UnixNano()))
 	// Define all the default values for the flags
 	flag.IntVar(&passwordLength, "l", 12, " Specify the length of the generated password.")
-	flag.IntVar(&withSpecialChars, "s", 1, " Allow special chars in the generated password.")
+	flag.BoolVar(&withSpecialChars, "s", true, " Allow special chars in the generated password.")
 }
 
 func generatePassword(specifiedLength int, withSpecialChars bool) string {
