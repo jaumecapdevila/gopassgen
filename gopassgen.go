@@ -16,13 +16,6 @@ var (
 
 func main() {
 	flag.Parse()
-	// if flag.NFlag() == 0 {
-	// 	fmt.Printf("Usage: %s [options]\n", os.Args[0])
-	// 	fmt.Println("Options:")
-	// 	flag.PrintDefaults()
-	// 	os.Exit(1)
-	// }
-
 	password := generatePassword(passwordLength, int2Bool(withSpecialChars))
 	fmt.Printf("Generated password: %s\n", password)
 }
