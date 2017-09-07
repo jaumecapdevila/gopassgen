@@ -29,7 +29,7 @@ func init() {
 
 func generatePassword(specifiedLength int, withSpecialChars bool) string {
 	const baseChars string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-	const specialChars string = "!@#$%^&*()-_=+,.?/:;{}[]"
+	const specialChars string = "!@#$%^&*()-_=+.?/{}[]"
 	availableChars := baseChars
 	if withSpecialChars {
 		availableChars = baseChars + specialChars
