@@ -2,5 +2,5 @@ package model
 
 // GeneratePasswordService interface
 type GeneratePasswordService interface {
-	Generate() string
+	GenerateFromCharacters(int, string) *Password
 }
